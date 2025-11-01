@@ -10,12 +10,13 @@ public class ClientService {
     @Autowired
     RestTemplate restTemplate;
 
-    private final String baseUrl = "http://localhost/api/v1";
+    private final String baseUrl = "http://localhost:8081/api/v1";
 
     public void sendChange() {
         CryptoRequest cryptoRequest = CryptoRequest.builder()
                 .val(20)
                 .cryptoType(CryptoType.BTC)
+                .indicator(CreditDebitIndicator.credit)  // <- ADDED THIS
                 .build();
 
         restTemplate.postForLocation(baseUrl+ "/change", cryptoRequest);
