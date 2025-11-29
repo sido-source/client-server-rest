@@ -2,6 +2,7 @@ package rest;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,8 +13,9 @@ public class ServerController {
     CryptoService cryptoService;
 
     @PostMapping(value = "/change", consumes = "application/json")
-    void cryptoChangeStatus(CryptoRequest cryptoRequest) {
+    ResponseEntity<?> cryptoChangeStatus(@RequestBody CryptoRequest cryptoRequest) {
         cryptoService.changeState(cryptoRequest);
+        return ResponseEntity.ok("Status changed");
     }
 
     @GetMapping(value = "/{crypto}", produces = "application/json")

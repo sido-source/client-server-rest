@@ -16,19 +16,19 @@ public class CryptoService {
         cryptoWithAmount.put(CryptoType.BTC, 200);
         cryptoWithAmount.put(CryptoType.XRP, 345);
         
-        historyOfChanges = new HashMap<>();  // FIXED: Initialize historyOfChanges
+        historyOfChanges = new HashMap<>();
     }
 
     void changeState(CryptoRequest cryptoRequest) {
         CreditDebitIndicator indicator = cryptoRequest.getIndicator();
         Integer amount = cryptoWithAmount.get(cryptoRequest.getCryptoType());
-        CryptoType cryptoType = cryptoRequest.getCryptoType();  // FIXED: Use getter
+        CryptoType cryptoType = cryptoRequest.getCryptoType();
 
         if (indicator.equals(CreditDebitIndicator.credit)) {
-            amount += cryptoRequest.getVal();  // FIXED: Use getter
+            amount += cryptoRequest.getVal();
             cryptoWithAmount.put(cryptoType, amount);
         } else {
-            amount -= cryptoRequest.getVal();  // FIXED: Use getter
+            amount -= cryptoRequest.getVal();
             cryptoWithAmount.put(cryptoType, amount);
         }
 

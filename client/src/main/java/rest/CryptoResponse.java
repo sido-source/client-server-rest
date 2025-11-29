@@ -2,18 +2,15 @@ package rest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
+@Data
 @Builder
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class CryptoResponse {
-    int val;
-    CryptoType cryptoType;
+    private int val;
+    private CryptoType cryptoType;
+    private CreditDebitIndicator creditDebitIndicator;
 }
