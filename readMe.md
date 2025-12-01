@@ -1,3 +1,12 @@
+
+
+<groupId>crypto.assets</groupId> it is location of the root folder it must be same as /src/java/{groupId}/entire_project_structure
+<artifactId>crypto-api</artifactId> it 
+
+
+
+HTTP Chapter:
+
 public class HttpEntity<T> {
 public static final HttpEntity<?> EMPTY;
 private final HttpHeaders headers;

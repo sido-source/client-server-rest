@@ -11,6 +11,8 @@
     <modules>
         <module>client</module>
         <module>server</module>
+        <module>crypto-api</module>
+        <module>db-consistency-models</module>
     </modules>
 
     <parent>
