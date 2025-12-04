@@ -13,6 +13,7 @@
         <module>server</module>
         <module>crypto-api</module>
         <module>db-consistency-models</module>
+        <module>thread-concurrency</module>
     </modules>
 
     <parent>

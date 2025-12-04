@@ -1,0 +1,2 @@
+Alice, 5000, "Czesc, jestem Alice; Co u was slychac; Narazie"
+Patryk, 2000, "Heyo; A Ja jestem Patryk, a Ty?; musze uciekac"
