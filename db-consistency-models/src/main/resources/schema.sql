@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS agent_bank CASCADE;
 DROP TABLE IF EXISTS payment_method CASCADE;
 DROP TABLE IF EXISTS ledger_entry CASCADE;
 DROP TABLE IF EXISTS payment_transaction CASCADE;
+TRUNCATE TABLE cinema_seat RESTART IDENTITY;
+
 
 -----------------------------------------
 -- PARENT: PAYMENT TRANSACTION
@@ -61,6 +63,15 @@ CREATE TABLE agent_bank (
             REFERENCES payment_transaction(id)
             ON DELETE CASCADE
 );
+
+
+
+
+CREATE TABLE cinema_seat (
+    id      BIGSERIAL PRIMARY KEY,
+    taken   BOOLEAN NOT NULL DEFAULT FALSE
+);
+INSERT INTO cinema_seat (taken) VALUES (FALSE);
 
 -----------------------------------------
 -- INDEXES FOR PERFORMANCE

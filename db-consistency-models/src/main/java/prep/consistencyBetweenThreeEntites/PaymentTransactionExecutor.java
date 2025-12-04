@@ -110,8 +110,7 @@ public class PaymentTransactionExecutor implements CommandLineRunner {
 
         System.out.println("Testing phase");
         try (Connection connection1 = DataSourceUtils.getConnection(dataSource)) {
-            try (Statement showStmt = connection1.createStatement();
-                 var rs = showStmt.executeQuery("SELECT * FROM payment_method")) {
+            try (Statement showStmt = connection1.createStatement(); var rs = showStmt.executeQuery("SELECT * FROM payment_method")) {
                 var md = rs.getMetaData();
                 int cols = md.getColumnCount();
                 while (rs.next()) {
