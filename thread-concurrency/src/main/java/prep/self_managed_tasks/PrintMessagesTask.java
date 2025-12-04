@@ -1,15 +1,16 @@
 package prep.self_managed_tasks;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class PrintMessagesTask extends Thread {
 
     MessagePrinter printer;
-    List<String> messages;
+    LinkedList<String> messages;
     int freq;
     String name;
 
-    public PrintMessagesTask(String name, int frequency, List<String> messages, MessagePrinter printer) {
+    public PrintMessagesTask(String name, int frequency, LinkedList<String> messages, MessagePrinter printer) {
         this.messages = messages;
         this.printer = printer;
         freq = frequency;
@@ -17,7 +18,7 @@ public class PrintMessagesTask extends Thread {
     }
 
     @Override
-    void run() {
+    public void run() {
 
         while (!messages.isEmpty()) {
             String message = messages.get(0);
